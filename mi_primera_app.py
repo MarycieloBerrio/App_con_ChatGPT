@@ -140,6 +140,66 @@ elif categoria_seleccionada == "Volumen":
         pulgadas_cubicas = cm_cubicos / 16.3871
         st.write(f"{cm_cubicos} centímetros cúbicos equivale a {pulgadas_cubicas:.2f} pulgadas cúbicas")
 
+# Conversión de tiempo
+elif categoria_seleccionada == "Tiempo":
+    tipos_conversion = [
+        "Horas a Minutos",
+        "Minutos a Segundos",
+        "Días a Horas",
+        "Semanas a Días"
+    ]
+    tipo_seleccionado = st.selectbox("Seleccione el tipo de conversión:", tipos_conversion)
+
+    if tipo_seleccionado == "Horas a Minutos":
+        horas = st.number_input("Ingrese el tiempo en horas:", value=0.0)
+        minutos = horas * 60
+        st.write(f"{horas} horas equivale a {minutos:.2f} minutos")
+
+    elif tipo_seleccionado == "Minutos a Segundos":
+        minutos = st.number_input("Ingrese el tiempo en minutos:", value=0.0)
+        segundos = minutos * 60
+        st.write(f"{minutos} minutos equivale a {segundos:.2f} segundos")
+
+    elif tipo_seleccionado == "Días a Horas":
+        dias = st.number_input("Ingrese el tiempo en días:", value=0.0)
+        horas = dias * 24
+        st.write(f"{dias} días equivale a {horas:.2f} horas")
+
+    elif tipo_seleccionado == "Semanas a Días":
+        semanas = st.number_input("Ingrese el tiempo en semanas:", value=0.0)
+        dias = semanas * 7
+        st.write(f"{semanas} semanas equivale a {dias:.2f} días")
+
+# Conversión de velocidad
+elif categoria_seleccionada == "Velocidad":
+    tipos_conversion = [
+        "Millas por hora a Kilómetros por hora",
+        "Kilómetros por hora a Metros por segundo",
+        "Nudos a Millas por hora",
+        "Metros por segundo a Pies por segundo"
+    ]
+    tipo_seleccionado = st.selectbox("Seleccione el tipo de conversión:", tipos_conversion)
+
+    if tipo_seleccionado == "Millas por hora a Kilómetros por hora":
+        mph = st.number_input("Ingrese la velocidad en millas por hora:", value=0.0)
+        kph = mph * 1.60934
+        st.write(f"{mph} millas por hora equivale a {kph:.2f} kilómetros por hora")
+
+    elif tipo_seleccionado == "Kilómetros por hora a Metros por segundo":
+        kph = st.number_input("Ingrese la velocidad en kilómetros por hora:", value=0.0)
+        mps = kph * 0.277778
+        st.write(f"{kph} kilómetros por hora equivale a {mps:.2f} metros por segundo")
+
+    elif tipo_seleccionado == "Nudos a Millas por hora":
+        nudos = st.number_input("Ingrese la velocidad en nudos:", value=0.0)
+        mph_nudos = nudos * 1.15078
+        st.write(f"{nudos} nudos equivale a {mph_nudos:.2f} millas por hora")
+
+    elif tipo_seleccionado == "Metros por segundo a Pies por segundo":
+        mps = st.number_input("Ingrese la velocidad en metros por segundo:", value=0.0)
+        fps = mps * 3.28084
+        st.write(f"{mps} metros por segundo equivale a {fps:.2f} pies por segundo")
+
 # Conversión de área
 elif categoria_seleccionada == "Área":
     tipos_conversion = [
